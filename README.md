@@ -6,10 +6,10 @@ from XCode 8 release notes:
 
 >Active Compilation Conditions is a new build setting for passing conditional compilation flags to the Swift compiler. Each element of the value of this setting passes to swiftc prefixed with -D, in the same way that elements of Preprocessor Macros pass to clang with the same prefix. (22457329)
 
-Easiest to use, just put ALPHA, DEBUG etc. there (no -D stuff needed, XCode handles that for you)
+👍 Easiest to use, just put ALPHA, DEBUG etc. there (no -D stuff needed, XCode handles that for you)
 
 ### When to use?
-Everytime you want to use target build flags inside your Swift code.
+Everytime you want to do build target dependent stuff inside your Swift code. Like switching API-keys and stuff.
 
 ## Preprocessor macros:
 
@@ -24,7 +24,7 @@ Like Active Compilation Conditions but only relevant for ObjC compiler.
 ## Other C/Swift Flags:
 
 ### Whats that?
-Preprocessor flags sent directly to compiler, has to have -D in front of it
+Preprocessor flags sent directly to compiler, has to have -D in front of it. Otherwise the compiler handles your tag as a folder or does other crazy stuff.
 
 ### When to use?
 Error-prone if used incorrectly, do not use if not absolutely necessary. Recommendation: Use Active Compilation Conditions (Swift) or Preprocessor macros (ObjC). In most cases that will be sufficient.
