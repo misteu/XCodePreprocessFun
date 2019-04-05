@@ -15,7 +15,8 @@ Everytime you want to use target build flags inside your Swift code.
 
 ## Whats that?
 tags will be prefixed with -D (same as Active Compilation Conditions)
-https://stackoverflow.com/questions/38813906/swift-how-to-use-preprocessor-flags-like-if-debug-to-implement-api-keys/47395485
+
+source: https://stackoverflow.com/questions/38813906/swift-how-to-use-preprocessor-flags-like-if-debug-to-implement-api-keys/47395485
 
 ## When to use?
 Like Active Compilation Conditions but only relevant for ObjC compiler.
