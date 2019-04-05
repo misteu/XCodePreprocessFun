@@ -1,6 +1,6 @@
 ## Active Compilation Conditions:
 
-## Whats that?
+### Whats that?
 
 from XCode 8 release notes:
 
@@ -8,17 +8,17 @@ from XCode 8 release notes:
 
 Easiest to use, just put ALPHA, DEBUG etc. there (no -D stuff needed, XCode handles that for you)
 
-## When to use?
+### When to use?
 Everytime you want to use target build flags inside your Swift code.
 
 ## Preprocessor macros:
 
-## Whats that?
+### Whats that?
 tags will be prefixed with -D (same as Active Compilation Conditions)
 
 source: https://stackoverflow.com/questions/38813906/swift-how-to-use-preprocessor-flags-like-if-debug-to-implement-api-keys/47395485
 
-## When to use?
+### When to use?
 Like Active Compilation Conditions but only relevant for ObjC compiler.
 
 ## Other C/Swift Flags:
@@ -39,7 +39,11 @@ Doing cool stuff inside info.plist depending on build target (like changing bund
 ### How to use?
 Must not have -D prefixed (like preprocessor macros or active compilation cond.)
 
-in plist #elseif is not allowed!
+**Attention:** in plist #elseif is not allowed!
+
+### When to use?
+Everytime you want to do stuff in one single info.plist depending on your build target.
+
 
 ## info.plist Other Preprocessor Flags:
 
@@ -49,4 +53,5 @@ Like info.plist Preprocessor Definitions but less handy and error prone (like ot
 ### How to use?
 Must have -D prefixed or won't compile
 
-in plist #elseif is not allowed!
+### When to use?
+Do not use unless you need to (like other C/Swift Flags)
