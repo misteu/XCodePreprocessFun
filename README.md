@@ -1,4 +1,13 @@
-## Active Compilation Conditions:
+## In short
+You can mix up and use everything together. 
+
+For clarity, simplicity and faster debugging, it's recommended to prefer the simpler and safer tags. 
+
+With that in mind: **Do** use "Active Compilation" conditions (Swift), "Preprocessor Macros" (ObjC) and "info.plist Preprocessor Definition"
+
+**Do not** use "Other Swift Flags", "Other C Flags" and "info.plist Other Preprocessor Flags" (unless not absoulutely necessary, maybe some SDKs need them)
+
+## 👍 Active Compilation Conditions:
 
 ### Whats that?
 
@@ -6,12 +15,12 @@ from XCode 8 release notes:
 
 >Active Compilation Conditions is a new build setting for passing conditional compilation flags to the Swift compiler. Each element of the value of this setting passes to swiftc prefixed with -D, in the same way that elements of Preprocessor Macros pass to clang with the same prefix. (22457329)
 
-👍 Easiest to use, just put ALPHA, DEBUG etc. there (no -D stuff needed, XCode handles that for you)
+Easiest to use, just put ALPHA, DEBUG etc. there (no -D stuff needed, XCode handles that for you)
 
 ### When to use?
 Everytime you want to do build target dependent stuff inside your Swift code. Like switching API-keys and stuff.
 
-## Preprocessor macros:
+## 👍 Preprocessor Macros:
 
 ### Whats that?
 tags will be prefixed with -D (same as Active Compilation Conditions)
@@ -21,7 +30,7 @@ source: https://stackoverflow.com/questions/38813906/swift-how-to-use-preprocess
 ### When to use?
 Like Active Compilation Conditions but only relevant for ObjC compiler.
 
-## Other C/Swift Flags:
+## 🤔 Other C/Swift Flags:
 
 ### Whats that?
 Preprocessor flags sent directly to compiler, has to have -D in front of it. Otherwise the compiler handles your tag as a folder or does other crazy stuff.
@@ -31,7 +40,7 @@ Error-prone if used incorrectly, do not use if not absolutely necessary. Recomme
 
 Source: https://fdp.io/blog/2018/03/18/active-compilation-conditions-for-xcode/
 
-## info.plist Preprocessor Definitions:
+## 👍 info.plist Preprocessor Definitions:
 
 ### What for?
 Doing cool stuff inside info.plist depending on build target (like changing bundle Id, App name etc)
@@ -45,7 +54,7 @@ Must not have -D prefixed (like preprocessor macros or active compilation cond.)
 Everytime you want to do stuff in one single info.plist depending on your build target.
 
 
-## info.plist Other Preprocessor Flags:
+## 🤔 info.plist Other Preprocessor Flags:
 
 ### What for?
 Like info.plist Preprocessor Definitions but less handy and error prone (like other C/Swift Flags)
